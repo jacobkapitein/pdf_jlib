@@ -1,5 +1,5 @@
 [package]
-name = "pdf-jlib"
+name = "pdf_jlib"
 version = "0.1.0"
 edition = "2021"
 
