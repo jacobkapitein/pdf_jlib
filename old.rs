@@ -120,8 +120,8 @@ fn main() -> io::Result<()> {
     let write_catalog = format!(
         "{} 0 obj % entry point\n\
          <<\n\
-         \t/Type /Catalog\n\
-         \t/Pages {} 0 R\n\
+           /Type /Catalog\n\
+           /Pages {} 0 R\n\
          >>\n\
          endobj\n\n",
         catalog.id, catalog.pages.id
@@ -138,10 +138,10 @@ fn main() -> io::Result<()> {
     let write_pages = format!(
         "{} 0 obj % parent of pages\n\
          <<\n\
-         \t/Type /Pages\n\
-         \t/Count {}\n\
-         \t/Kids [{} 0 R]\n\
-         \t/MediaBox [{} {} {} {}]\n\
+           /Type /Pages\n\
+           /Count {}\n\
+           /Kids [{} 0 R]\n\
+           /MediaBox [{} {} {} {}]\n\
          >>\n\
          endobj\n\n",
         catalog.pages.id,
@@ -164,9 +164,9 @@ fn main() -> io::Result<()> {
     let write_font = format!(
         "{} 0 obj % font definition\n\
          <<\n\
-         \t/Type /Font\n\
-         \t/Subtype /{}\n\
-         \t/BaseFont /{}\n\
+           /Type /Font\n\
+           /Subtype /{}\n\
+           /BaseFont /{}\n\
          >>\n\
          endobj\n\n",
         page.resources.font.id, page.resources.font.subtype, page.resources.font.base_font
@@ -183,15 +183,15 @@ fn main() -> io::Result<()> {
     let write_page = format!(
         "{} 0 obj % first page\n\
          <<\n\
-         \t/Type /Page\n\
-         \t/Parent {} 0 R\n\
-         \t/MediaBox [{} {} {} {}]\n\
-         \t/Contents {} 0 R\n\
-         \t/Resources <<\n\
-         \t\t/Font <<\n\
-         \t\t\t/F1 {} 0 R\n\
-         \t\t>>\n\
-         \t>>\n\
+           /Type /Page\n\
+           /Parent {} 0 R\n\
+           /MediaBox [{} {} {} {}]\n\
+           /Contents {} 0 R\n\
+           /Resources <<\n\
+             /Font <<\n\
+               /F1 {} 0 R\n\
+             >>\n\
+           >>\n\
          >>\n\
          endobj\n\n",
         page.id,
@@ -215,7 +215,7 @@ fn main() -> io::Result<()> {
     let write_contents = format!(
         "{} 0 obj % content of the first page\n\
          <<\n\
-         \t/Length {}\n\
+           /Length {}\n\
          >>\n\
          stream\n\
          BT\n\
@@ -240,9 +240,9 @@ fn main() -> io::Result<()> {
     let pdf_info = format!(
         "10 0 obj\n\
         <<\n\
-        \t/Type /Info\n\
-        \t/Producer (pdf-jlib 0.0.1)\n\
-        \t/Creator (pdf-jlib 0.0.1)\n\
+          /Type /Info\n\
+          /Producer (pdf-jlib 0.0.1)\n\
+          /Creator (pdf-jlib 0.0.1)\n\
         >>\n\
         endobj\n\n"
     );
@@ -269,9 +269,9 @@ fn main() -> io::Result<()> {
     write_xref.push_str("trailer\n");
     write_xref.push_str(&format!(
         "<<\n\
-         \t/Size {} % amount of objects in document\n\
-         \t/Root {} 0 R % root catalog element reference\n\
-         \t/Info 10 0 R\n\
+           /Size {} % amount of objects in document\n\
+           /Root {} 0 R % root catalog element reference\n\
+           /Info 10 0 R\n\
          >>\n\
          startxref % references the position of the xref table\n\
          {}\n\

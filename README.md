@@ -5,14 +5,21 @@ In the meantime I am learning about Rust, because as you can see, I'm not really
 
 ## Goals:
 
+Next step: add an API for adding text!
+Features I want to add immediately:
+- Add text
+- Set position
+- Set max width
+- Rotate
+
 - [x] Create a basic PDF file
 - [x] Create a page
-- [ ] Create multiple pages
-- [x] Add some basic text
-- [ ] Add images
+- [x] Create multiple pages
+- [ ] Add some basic text (default font)
+- [ ] Change font for text (default baked in PDF fonts)
+- [ ] Add embedded fonts and add to text
+- [ ] Add embedded images
 - [ ] Use encoding algorithms (like zlib/FlateEncode)
-- [ ] Change font for text
-- [ ] Add embedded fonts
 
 ### Ultimate goal
 
