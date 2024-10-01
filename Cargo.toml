@@ -1,0 +1,2 @@
+[workspace]
+members = ["pdf_jlib", "scratchpad"]
